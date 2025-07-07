@@ -1,0 +1,18 @@
+theme = rose-pine-moon
+
+background = #221f29
+confirm-close-surface = false
+
+keybind = shift+ctrl+r=reload_config
+
+keybind = shift+ctrl+h=new_split:left
+keybind = shift+ctrl+j=new_split:down
+keybind = shift+ctrl+k=new_split:up
+keybind = shift+ctrl+l=new_split:right
+
+keybind = shift+ctrl+b=close_surface
+
+gtk-tabs-location = hidden
+
+window-decoration = false
+window-padding-balance = true

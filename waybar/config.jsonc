@@ -1,0 +1,99 @@
+{
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bottom": 5,
+  "height": 30,
+  "modules-left": [
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "custom/spotify",
+    "pulseaudio",
+    "backlight",
+    "network",
+    "battery",
+    "clock"
+  ],
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 35,
+    "rewrite": {
+      "": "Hyprland"
+    },
+    "separate-outputs": true
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": " "
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 4,  // 5 workspaces by default on every monitor
+      "HDMI-A-1": 3  // but only three on HDMI-A-1
+    }
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "network": {
+    "format-wifi": "{icon}|",
+    "format-icons": ["󰤨 ","󰤥 ","󰤢 ","󰤟 "],
+    "format-ethernet": "{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠ |",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon} |",
+    "format-bluetooth": "{volume}% {icon}|",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " |",
+    "format-icons": {
+      "headphone": "  ",
+      "hands-free": "  ",
+      "headset": "  ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "backlight": {
+	"format": "{icon}|",
+	"format-icons": ["󰃞 ", "󰃟 ", "󰃠 "]
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{capacity}% {icon}|",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "max-length": 25
+  },
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 //home/alekai/SourceCode/Random/mediaplayer.py --player spotify",
+    "format": "{}  |",
+    "return-type": "json",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-click-right": "playerctl --player=spotify next",
+    "max-length": 40
+  }
+}

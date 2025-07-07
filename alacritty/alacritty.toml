@@ -1,0 +1,19 @@
+[general]
+import = ["/home/alekai/.cache/wal/colors-alacritty.toml"]
+
+
+[window]
+padding.x = 0
+padding.y = 0
+
+decorations = "none"
+
+opacity = 0.6
+blur = true
+
+[font]
+normal.family = "MesloLGS NF"
+size = 12
+
+[terminal]
+shell = { program = "/usr/bin/zsh", args = ["-l"] }
