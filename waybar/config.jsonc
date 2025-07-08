@@ -89,7 +89,7 @@
     "max-length": 25
   },
   "custom/spotify": {
-    "exec": "/usr/bin/python3 //home/alekai/SourceCode/Random/mediaplayer.py --player spotify",
+    "exec": "/usr/bin/python3 //home/alekai/.config/mediaplayer.py --player spotify",
     "format": "{}  |",
     "return-type": "json",
     "on-click": "playerctl --player=spotify play-pause",
